@@ -1,31 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Guestbook</title>
-  <style>
-    .guestbook-entry {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #f9f9f9;
-    }
-  </style>
-</head>
-<body>
-  <h1>Guestbook</h1>
-  
-  <form id="guestbook-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required>
-    
-    <label for="message">Message:</label>
-    <textarea id="message" required></textarea>
-    
-    <button type="submit">Submit</button>
-  </form>
-  
-  <div id="guestbook-entries"></div>
-  
-  <script src="guestbook.js"></script>
-</body>
+<!-- index.html -->
+
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0"> 
+	<title>Guestbook</title> 
+	<link rel="stylesheet" href="style.css"> 
+</head> 
+
+<body> 
+	<div class="container"> 
+		<h1>GuestBook</h1> 
+		<form id="guestForm"> 
+			<div class="form-input"> 
+				<label for="name">Name:</label> 
+				<input type="text"
+					id="name" name="name"
+					required> 
+			</div> 
+			<div class="form-input"> 
+				<label for="address">Address:</label> 
+				<input type="text"
+					id="address" name="address"
+					required> 
+			</div> 
+			<div class="form-input"> 
+				<label for="mobile">Mobile:</label> 
+				<input type="tel"
+					id="mobile" name="mobile"
+					required> 
+			</div> 
+			<div class="form-input"> 
+				<label for="roomno"> 
+				Room Number: 
+				</label> 
+				<input type="text"
+					id="roomno" name="roomno"
+					required> 
+			</div> 
+			<div class="btn"><button type="submit"> 
+					Add Guest 
+				</button></div> 
+		</form> 
+		<div id="guestList"></div> 
+	</div> 
+	<script src="script.js"></script> 
+</body> 
+
 </html>
