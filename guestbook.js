@@ -1,36 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('guestbook-form');
-  const entriesContainer = document.getElementById('guestbook-entries');
-  
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const nameInput = document.getElementById('name');
-    const messageInput = document.getElementById('message');
-    
-    const name = nameInput.value;
-    const message = messageInput.value;
-    
-    if (name.trim() === '' || message.trim() === '') {
-      alert('Please enter both your name and a message.');
-      return;
-    }
-    
-    const entry = document.createElement('div');
-    entry.classList.add('guestbook-entry');
-    
-    const nameElement = document.createElement('h3');
-    nameElement.textContent = name;
-    
-    const messageElement = document.createElement('p');
-    messageElement.textContent = message;
-    
-    entry.appendChild(nameElement);
-    entry.appendChild(messageElement);
-    
-    entriesContainer.appendChild(entry);
-    
-    nameInput.value = '';
-    messageInput.value = '';
-  });
+const guestForm = document.getElementById('guestForm'); 
+const guestList = document.getElementById('guestList'); 
+
+guestForm.addEventListener('submit', function (e) { 
+	e.preventDefault(); 
+
+	const name = document.getElementById('name').value; 
+	const address = document.getElementById('address').value; 
+	const mobile = document.getElementById('mobile').value; 
+	const roomno = document.getElementById('roomno').value; 
+
+	const guestCard = document.createElement('div'); 
+	guestCard.classList.add('guest-card'); 
+	guestCard.innerHTML = ` 
+				<h2>${name}</h2> 
+				<p><strong>Address:</strong> ${address}</p> 
+				<p><strong>Mobile:</strong> ${mobile}</p> 
+				<p><strong>Room Number:</strong> ${roomno}</p>`; 
+
+	guestList.appendChild(guestCard); 
+
+	guestForm.reset(); 
 });
